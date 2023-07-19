@@ -3,20 +3,31 @@ import Navbar from '../03.Components/Navbar';
 import axios from "axios";
 import AffichageMessage from '../03.Components/AffichageMessage';
 import EnvoieDeMessage from '../03.Components/EnvoieDeMessage';
+import SalonContext from "../04.Context/SalonContext";
+
 
 const Message = () => {
 
     const [data,setData] = useState([])
+    const { salonContext } = useContext(SalonContext);
+    const [envoieTxt,setEnvoieTxt] = useState("")
 
-console.log(data);
+    const handleSubmit = (envoieMessage) => {
+        envoieMessage.preventDefault();
+        return axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/salon/1/user/1/message`, {messages : envoieTxt})
+        .then((res)=>console.info(res))
+        .catch((err)=>{console.warn(err);})
+    }
 
-useEffect (()=>{
-    axios
-    .get(`${import.meta.env.VITE_BACKEND_URL}/salon/1/message`)
-    .then((res) => {
-        setData(res.data)
-    })
-},[])
+
+    useEffect (()=>{
+        axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/salon/${salonContext}/message`)
+        .then((res) => {
+            setData(res.data)
+        })
+    },[handleSubmit])
 
 
     return (
@@ -31,7 +42,7 @@ useEffect (()=>{
                     </div>
             
                 </div>
-            <EnvoieDeMessage/>
+            <EnvoieDeMessage handleSubmit={handleSubmit} setEnvoieTxt={setEnvoieTxt} />
         </div>
     );
 };

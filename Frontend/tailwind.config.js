@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     fontFamily:{
-      texts: ["bold"]
+      texts: ['Lumanosimo', 'sans-serif']
     },
     extend: { colors : {
       'custom-gray': '#9B9999',

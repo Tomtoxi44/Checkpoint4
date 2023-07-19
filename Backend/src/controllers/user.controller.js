@@ -41,7 +41,7 @@ const getLogin = (req, res, next) => {
   const { pseudo } = req.body;
 
   database
-    .query("SELECT * FROM user WHERE email = ?", [pseudo])
+    .query("SELECT * FROM user WHERE pseudo = ?", [pseudo])
     .then(([users]) => {
       if (users[0] != null) {
         // eslint-disable-next-line prefer-destructuring

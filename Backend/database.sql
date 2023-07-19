@@ -62,5 +62,25 @@ INSERT INTO `forum_db`.`salon` (`name_salon`) VALUES ("Tartelette");
 INSERT INTO `forum_db`.`salon` (`name_salon`) VALUES ("Jambon beurre");
 INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
 INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message1",0);
+INSERT INTO `forum_db`.`messagetable` (`user_id`,`salon_id`,`messages`,`fav`) VALUES (1,1,"Hello message2",0);
 
 

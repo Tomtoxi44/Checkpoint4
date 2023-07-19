@@ -6,7 +6,7 @@
   "scripts": {
     "migrate": "cd ./backend && node migrate.js",
     "dev-server": "nodemon ./Backend/index.js",
-    "dev-client": "vite ./Frontend/vite.config.js",
+    "dev-front": "cross-env-shell \"cd ./frontend && $npm_package_config_cli run dev\"",
     "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -29,7 +29,9 @@ router.post("/salon",salonController.postSalon)
 //              messagetable
 //-------------------------------------------
 router.get("/salon/:salonId/message",messageController.getMessageAll);
+router.get("/salon/all",messageController.getAll);
 router.post("/salon/:salonId/user/:userId/message",messageController.postMessage)
+router.delete("/salon/message/:id",messageController.deleteMessage)
 
 
 module.exports = router;

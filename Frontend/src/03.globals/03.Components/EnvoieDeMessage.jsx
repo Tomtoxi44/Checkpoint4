@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EnvoieDeMessage = ({handleSubmit,setEnvoieTxt}) => {
+const EnvoieDeMessage = ({handleSubmit,setEnvoieTxt,envoieTxt}) => {
 
     
 
@@ -15,8 +15,8 @@ const EnvoieDeMessage = ({handleSubmit,setEnvoieTxt}) => {
 
                
 
-                    <input required type="text" onChange={(event) => setEnvoieTxt(event.target.value)} className=' w-1/2 h-10 rounded-full p-5 focus:ring-blue-700 shadow-md shadow-black ' />
-                     <button onSubmit={handleSubmit} type='submit' className='bg-blue-600'>envoie</button>
+                    <input required type="text" value={envoieTxt} onChange={(event) => setEnvoieTxt(event.target.value)} className=' w-1/2 h-10 rounded-full p-5 focus:ring-blue-700 shadow-md shadow-black ' />
+                     <button onSubmit={handleSubmit} type='submit' className='bg-blue-800 text-white rounded-lg w-[150px] shadow-md shadow-black font-texts'>envoie</button>
                 
             </div>
             

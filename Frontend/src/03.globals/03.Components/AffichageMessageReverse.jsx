@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AffichageMessageReverse = ({txt,pseudo,handlSupr}) => {
+const AffichageMessageReverse = ({txt,pseudo,handlSupr,supr}) => {
     const logo = pseudo[0]+pseudo[1]
     
 
@@ -14,7 +14,7 @@ const AffichageMessageReverse = ({txt,pseudo,handlSupr}) => {
             
                 <br />
            
-            <button className='h-[50px] w-[150px] rounded-lg bg-black text-white absolute m-[100%] flex justify-center items-center left-0 -translate-x-52 ' onClick={handlSupr}>supprimer</button>
+            <button className='h-[50px] w-[150px] rounded-lg bg-black text-white absolute m-[100%] flex justify-center items-center left-0 -translate-x-52 ' onClick={() =>handlSupr(supr)}>supprimer</button>
             <p className=' w-3/4 break-words mb-5 '>{txt}</p>
             
         </div>

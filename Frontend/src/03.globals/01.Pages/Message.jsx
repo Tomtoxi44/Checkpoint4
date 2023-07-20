@@ -19,32 +19,35 @@ const Message = () => {
         envoieMessage.preventDefault();
         return axios
         .post(`${import.meta.env.VITE_BACKEND_URL}/salon/${salonContext}/user/${userContext.idUser}/message`, {messages : envoieTxt})
-        .then((res)=>console.info(res))
-        .catch((err)=>{console.warn(err);})
+        .then((res)=>console.info(res),handleScroll)
+        .catch((err)=>{console.warn(err);}),
+        setEnvoieTxt("")
     }
 
     const handlSupr = (supprMessage) =>{
-        supprMessage.preventDefault();
         return axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/salon/${salonContext}/user/${userContext.idUser}/message`, {messages : envoieTxt})
-        .then((res)=>console.info(res))
+        .delete(`${import.meta.env.VITE_BACKEND_URL}/salon/message/${supprMessage}`)
+        .then(()=>handleScroll)
         .catch((err)=>{console.warn(err);})
+        
     }
 
 
-
+    const handleScroll = () => {
+        window.scrollTo(0, document.body.scrollHeight)
+    }
 
     useEffect (()=>{
         axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/salon/${salonContext}/message`)
         .then((res) => {setData(res.data)
         
-        })
+        }),
+        handleScroll
         
        
         
-    },[handleSubmit])
-
+    },[handleSubmit,handlSupr])
 
 
    
@@ -57,10 +60,10 @@ const Message = () => {
 
                     {data.map((e)=>{const utilisateur = e.user_id === userContext.idUser; return(utilisateur ? 
                         <div className=' flex flex-col gap-32 mt-24 w-full items-center '>
-                            <AffichageMessageReverse handlSupr={handlSupr}txt={e.messages} pseudo={e.pseudo}/>
+                            <AffichageMessageReverse supr={e.id} handlSupr={handlSupr}txt={e.messages} pseudo={e.pseudo}/>
                         </div> :
                         <div className=' flex flex-col gap-32 mt-12 w-full items-center  '> 
-                            <AffichageMessage txt={e.messages} pseudo={e.pseudo}/>
+                            <AffichageMessage  txt={e.messages} pseudo={e.pseudo}/>
                         </div>
                     )
                     
@@ -68,7 +71,7 @@ const Message = () => {
                     </div>
             
                 </div>
-            <EnvoieDeMessage handleSubmit={handleSubmit} setEnvoieTxt={setEnvoieTxt} />
+            <EnvoieDeMessage envoieTxt={envoieTxt} handleSubmit={handleSubmit} setEnvoieTxt={setEnvoieTxt} />
         </div>
     );
 };

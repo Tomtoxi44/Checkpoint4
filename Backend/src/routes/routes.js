@@ -32,6 +32,7 @@ router.get("/salon/:salonId/message",messageController.getMessageAll);
 router.get("/salon/all",messageController.getAll);
 router.post("/salon/:salonId/user/:userId/message",messageController.postMessage)
 router.delete("/salon/message/:id",messageController.deleteMessage)
+router.update("/salon/message/:id",messageController.updateMessage)
 
 
 module.exports = router;

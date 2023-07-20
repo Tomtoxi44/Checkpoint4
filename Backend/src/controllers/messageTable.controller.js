@@ -57,9 +57,32 @@ const deleteMessage = (req, res) => {
 };
 
 
+const updateMessage = (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const { messages } = req.body;
+
+  database
+    .query("UPDATE messagetable SET messages = ? WHERE id = ?", [
+      messages,
+      id
+    ])
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).send("Not Found");
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error editing the user");
+    });
+};
+
   module.exports = {
     getMessageAll,
     postMessage,
     deleteMessage,
     getAll,
+    updateMessage
   };

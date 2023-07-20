@@ -16,7 +16,7 @@ const HomePage = () => {
   
 
     const handleChange = async (e) => {
-        console.log(e);
+    
         await setSalonContext(e.idsalon )
         await navigate("/message")
     }
@@ -73,15 +73,15 @@ const HomePage = () => {
 
                             {data.filter(e => filtre ? e.name_salon.toLowerCase().includes(filtre.toLowerCase()) : true)
                                 .map((e) => {
-                                    console.log();
+                          
                                     return (
                                         <div key={e.idsalon } className='flex flex-row gap-10'>
-                                            <div key={e.idsalon } className='bg-white w-[350px] rounded-lg text-center shadow-md shadow-black flex flex-row gap-5 '>
+                                            <div  className='bg-white w-[350px] rounded-lg text-center shadow-md shadow-black flex flex-row gap-5 '>
                                                 
-                                                <p key={e.idsalon } className='m-auto'>{e.name_salon}</p>
-                                                <p key={e.idsalon } className='m-auto'>{dataMessage.filter(message => message.salon_id === e.idsalon ).length} messages</p>
+                                                <p  className='m-auto'>{e.name_salon}</p>
+                                                <p  className='m-auto'>{dataMessage.filter(message => message.salon_id === e.idsalon ).length} messages</p>
                                             </div>
-                                            <button key={e.idsalon } type='button' onClick={() => handleChange(e)} className='bg-blue-800 rounded-lg w-[150px] shadow-md shadow-black  text-white'>
+                                            <button  type='button' onClick={() => handleChange(e)} className='bg-blue-800 rounded-lg w-[150px] shadow-md shadow-black  text-white'>
                                                 Rejoindre
                                             </button>
                                         </div>)

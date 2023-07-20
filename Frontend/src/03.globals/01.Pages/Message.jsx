@@ -6,6 +6,13 @@ import EnvoieDeMessage from '../03.Components/EnvoieDeMessage';
 import SalonContext from "../04.Context/SalonContext";
 import UserContext from "../04.Context/UserContext";
 import AffichageMessageReverse from "../03.Components/AffichageMessageReverse"
+import ModifeMessage from '../03.Components/ModifeMessage';
+
+
+
+
+
+
 
 const Message = () => {
 
@@ -14,6 +21,7 @@ const Message = () => {
     const { userContext } = useContext(UserContext);
     const [envoieTxt,setEnvoieTxt] = useState("")
     const [dataLoaded, setDataLoaded] = useState(false);
+    const [popUp, setPopUp] = useState(false);
 
     const handleSubmit = (envoieMessage) => {
         envoieMessage.preventDefault();
@@ -53,14 +61,15 @@ const Message = () => {
    
     return (
         <div className='h-screen bg-gray-800 pb-28'>
-            
+            {popUp ? <ModifeMessage envoieTxt={envoieTxt} handleSubmit={handleModif} setEnvoieTxt={setEnvoieTxt}/>:""}
             <Navbar/>
                 <div className='h-[calc(100%-56px)] hide-scrollbar overflow-y-scroll '>
                     <div className='flex flex-col gap-32 mt-12 w-full items-center '>
 
                     {data.map((e)=>{const utilisateur = e.user_id === userContext.idUser; return(utilisateur ? 
                         <div className=' flex flex-col gap-32 mt-24 w-full items-center '>
-                            <AffichageMessageReverse supr={e.id} handlSupr={handlSupr}txt={e.messages} pseudo={e.pseudo}/>
+                           
+                            <AffichageMessageReverse setPopUp={setPopUp} supr={e.id} handlSupr={handlSupr}txt={e.messages} pseudo={e.pseudo}/>
                         </div> :
                         <div className=' flex flex-col gap-32 mt-12 w-full items-center  '> 
                             <AffichageMessage  txt={e.messages} pseudo={e.pseudo}/>

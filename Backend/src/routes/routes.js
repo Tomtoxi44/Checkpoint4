@@ -14,7 +14,7 @@ const {hashPassword,verifyPassword}= require("../auth/auth.js")
 //              User
 //-------------------------------------------
 router.get("/user",userController.getUsersAll);
-router.post("/user",hashPassword,userController.postUser);
+router.post("/user",userController.postUser);
 router.post("/login",userController.getLogin,verifyPassword);
 
 

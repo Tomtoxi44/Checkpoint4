@@ -22,6 +22,7 @@ const Message = () => {
 
 
     useEffect (()=>{
+        window.scrollTo(0, document.body.scrollHeight)
         axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/salon/${salonContext}/message`)
         .then((res) => {
@@ -31,7 +32,7 @@ const Message = () => {
 
 
     return (
-        <div className='h-screen bg-custom-body pb-28'>
+        <div className='h-screen bg-gray-800 pb-28'>
             
             <Navbar/>
                 <div className='h-[calc(100%-56px)] hide-scrollbar overflow-y-scroll '>

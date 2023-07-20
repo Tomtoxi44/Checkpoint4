@@ -38,13 +38,13 @@ database
 
 
 const getLogin = (req, res) => {
-  const { pseudo } = req.body;
+  const { pseudo, password } = req.body;
 
   database
-    .query("SELECT * FROM user WHERE pseudo = ?  ", [pseudo])
+    .query("SELECT * FROM user WHERE pseudo = ? AND password = ? ", [pseudo,password])
     .then(([users]) => {
       if (users[0] != null) {
-        req.user = users[0];
+        res.user = users[0];
         res.status(200).send("succes")
       } else {
         res.sendStatus(401);

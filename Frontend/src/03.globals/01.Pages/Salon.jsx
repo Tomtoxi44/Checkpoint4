@@ -53,8 +53,9 @@ useEffect(()=>{
                     <div className='h-3/4 w-3/4 '>
                         <button type='button' onClick={()=>setPopUp(true)} className='text-white underline'>Créer un nouveau salon</button>
                         <div  className='h-full w-full bg-gray-500 rounded-lg shadow-md shadow-black flex flex-col gap-8  items-center'>
-                            <input onChange={(event) => setfiltre(event.target.value)} className='mb-10 mt-10 pl-5 rounded-full shadow-md shadow-black' type='text' />
-                            {data.filter(()=>  filtre)
+                            <p className='mt-10'>Recherche</p>
+                            <input onChange={(event) => setfiltre(event.target.value)} className='mb-10  pl-5 rounded-full shadow-md shadow-black' type='text' />
+                            {data.filter(e => filtre ? e.name_salon.toLowerCase().includes(filtre.toLowerCase()) : true)
                             .map((e)=>{ return(
                             <div key={e.idSalon} className='flex flex-row gap-10'>
                                 <div key={e.idSalon} className='bg-white w-[350px] rounded-lg text-center shadow-md shadow-black flex flex-row gap-5 '>

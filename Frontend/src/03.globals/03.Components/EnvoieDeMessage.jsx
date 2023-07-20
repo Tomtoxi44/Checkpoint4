@@ -11,7 +11,7 @@ const EnvoieDeMessage = ({handleSubmit,setEnvoieTxt}) => {
     return (
     <form action="" onSubmit={handleSubmit}>
         <div className='flex justify-center bottom-0 w-full fixed'>
-             <div className='w-3/4 bg-custom-gray h-24 flex items-center justify-center gap-10 shadow-md shadow-black  rounded-t-lg'>
+             <div className='w-3/4 bg-gray-500 h-24 flex items-center justify-center gap-10 shadow-md shadow-black  rounded-t-lg'>
 
                
 

@@ -24,16 +24,17 @@ function App() {
 
   const userValue = useMemo(() => {
     return { userContext, setUserContext };
-  }, [salonContext]);
+  }, [userContext]);
   
   return (
     <div className="font-texts">
-
+<UserContext.Provider value={userValue}>
    <SalonContext.Provider value={salonValue}>
-   <UserContext.Provider value={userValue}>
+   
       <Router />
+ 
+  </SalonContext.Provider> 
   </UserContext.Provider>
-  </SalonContext.Provider>
     </div>
   )
 }

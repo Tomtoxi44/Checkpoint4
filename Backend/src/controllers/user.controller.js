@@ -45,7 +45,7 @@ const getLogin = (req, res) => {
     .then(([users]) => {
       if (users[0] != null) {
         res.user = users[0];
-        res.status(200).send("succes")
+        res.status(200).send(users)
       } else {
         res.sendStatus(401);
       }

@@ -9,7 +9,7 @@ const AffichageMessage = ({txt,pseudo}) => {
             <p className='border border-l-0 border-r-0 border-b-black w-1/2'>{pseudo}:</p>
             <br />
             <div className='h-[50px] w-[50px] rounded-full bg-custom-gray absolute flex justify-center items-center left-0 -translate-x-5 -translate-y-5 '><p> {logo}</p></div>
-            <p className='mb-5'>{txt}</p>
+            <p className='w-3/4 break-words mb-5'>{txt}</p>
             
         </div>
     );

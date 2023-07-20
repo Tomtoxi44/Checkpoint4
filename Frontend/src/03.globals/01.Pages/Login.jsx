@@ -1,6 +1,6 @@
 import React,{useContext,useState,useEffect} from 'react';
 import { NavLink,useNavigate } from "react-router-dom";
-// import UserContext from "../04.Context/UserContext";
+import UserContext from "../04.Context/UserContext";
 import axios from "axios";
 
 
@@ -8,20 +8,18 @@ const Login = () => {
 
     const [pseudo, setPseudo] = useState("");
     const [password, setPassword] = useState("");
-    // const { setUserContext }= useContext(UserContext)
+    const { userContext,setUserContext }= useContext(UserContext)
     const navigate = useNavigate();
-
-
 
 
     const handleSubmit = (inscription) => {
         inscription.preventDefault();
-        console.log("bonjour");
          axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {pseudo, password}, console.log("bonjour2"))
+        .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {pseudo, password})
         .then((res) => {
-            console.info(res)
-            // setUserContext(res.id)
+
+            setUserContext(res.data[0])
+            console.log(userContext);
             navigate("/Salon");
         })
         .catch((err) => {

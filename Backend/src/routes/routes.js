@@ -5,7 +5,7 @@ const router = express.Router();
 const userController =require("../controllers/user.controller");
 const salonController =require("../controllers/salon.controller");
 const messageController =require("../controllers/messageTable.controller");
-const {hashPassword,verifyPassword}= require("../auth/auth.js")
+const {verifyPassword}= require("../auth/auth.js")
 
 
 

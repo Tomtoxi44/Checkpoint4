@@ -4,7 +4,7 @@ import axios from "axios";
 import SalonContext from "../04.Context/SalonContext";
 import { useNavigate } from "react-router-dom";
 import NewSalon from '../03.Components/NewSalon';
-import Message from './Message';
+
 
 
 const HomePage = () => {

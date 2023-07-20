@@ -1,6 +1,12 @@
 import React from 'react';
 
 const ModifeMessage = ({handleModif,}) => {
+
+
+
+
+
+
     return (
         <div className='h-full w-full flex justify-center items-center'>
                 <form action="" onSubmit={handleModif} className='flex flex-col justify-center items-center rounded-lg w-1/4 h-1/      4 bg-gray-500 gap-5'>            

@@ -5,7 +5,7 @@ const router = express.Router();
 const userController =require("../controllers/user.controller");
 const salonController =require("../controllers/salon.controller");
 const messageController =require("../controllers/messageTable.controller");
-
+const {hashPassword,verifyPassword}= require("../auth/auth.js")
 
 
 
@@ -14,8 +14,8 @@ const messageController =require("../controllers/messageTable.controller");
 //              User
 //-------------------------------------------
 router.get("/user",userController.getUsersAll);
-router.post("/user",userController.postUser);
-router.post("/login",userController.getLogin);
+router.post("/user",hashPassword,userController.postUser);
+router.post("/login",userController.getLogin,verifyPassword);
 
 
 //-------------------------------------------
@@ -23,6 +23,7 @@ router.post("/login",userController.getLogin);
 //-------------------------------------------
 
 router.get("/salon",salonController.getSalonAll);
+router.post("/salon",salonController.postSalon)
 
 //-------------------------------------------
 //              messagetable

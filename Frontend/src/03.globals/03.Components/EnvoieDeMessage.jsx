@@ -15,7 +15,7 @@ const EnvoieDeMessage = ({handleSubmit,setEnvoieTxt}) => {
 
                
 
-                    <input type="text" onChange={(event) => setEnvoieTxt(event.target.value)} className=' w-1/2 h-10 rounded-full p-5 focus:ring-blue-700 shadow-md shadow-black ' />
+                    <input required type="text" onChange={(event) => setEnvoieTxt(event.target.value)} className=' w-1/2 h-10 rounded-full p-5 focus:ring-blue-700 shadow-md shadow-black ' />
                      <button onSubmit={handleSubmit} type='submit' className='bg-blue-600'>envoie</button>
                 
             </div>

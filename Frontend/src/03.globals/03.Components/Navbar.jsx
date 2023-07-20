@@ -7,7 +7,8 @@ const Navbar = () => {
             <div className='flex justify-around w-full'>
             <NavLink to="/salon">
             <button className='bg-white rounded-lg w-[150px] shadow-md shadow-black font-texts'>Les Salons</button></NavLink>
-            <button className='bg-red-400 rounded-lg w-[150px] shadow-md shadow-black font-texts'>Déconnexion</button></div>
+            <NavLink to="/">
+            <button className='bg-red-400 rounded-lg w-[150px] shadow-md shadow-black font-texts'>Déconnexion</button></NavLink></div>
             
         </div></div>
     );

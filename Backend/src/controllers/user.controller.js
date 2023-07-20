@@ -37,16 +37,15 @@ database
 };
 
 
-const getLogin = (req, res, next) => {
+const getLogin = (req, res) => {
   const { pseudo } = req.body;
 
   database
-    .query("SELECT * FROM user WHERE pseudo = ?", [pseudo])
+    .query("SELECT * FROM user WHERE pseudo = ?  ", [pseudo])
     .then(([users]) => {
       if (users[0] != null) {
-        // eslint-disable-next-line prefer-destructuring
         req.user = users[0];
-        next();
+        res.status(200).send("succes")
       } else {
         res.sendStatus(401);
       }
